@@ -3,10 +3,52 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
+    <link href="~/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/css/site.css" rel="stylesheet" />
+    <link href="~/font-awesome/css/font-awesome.css" rel="stylesheet" />
 </head>
 <body>
-    <div>
+
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-info border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img src="~/Images/schoollogo.png" alt="logo" />
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent" 
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon" >  </span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse" >
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Students" asp-action="AllSudents">Students</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Teacher" asp-action="AllTeachers">Teachers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Subjects" asp-action="AllSubjects">Subjects</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>  
+        </nav>
+    </header>
+    <div class="container-fluid" style="padding-left: 0; padding-right: 0; margin-top: -18px;">
         @RenderBody()
     </div>
+
+    <footer class="border-top footer text-muted bg-info">
+        <div class="container">
+            &copy; @DateTime.Now.Year - School Management - <a asp-area="" asp-controller="Home" asp-action="Index">Oodweyne All Rights Reserved</a>
+        </div>
+    </footer>
+    <script src="~/js/site.js"></script>
+    <script src="~/jquery/dist/jquery.js"></script>
+    <script src="~/bootstrap/dist/js/bootstrap.js"></script>
 </body>
 </html>
