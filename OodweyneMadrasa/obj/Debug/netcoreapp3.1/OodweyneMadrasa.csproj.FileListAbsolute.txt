@@ -132,3 +132,6 @@ C:\BOOTCAMP2020\OodweyneMadrasa\OodweyneMadrasa\obj\Debug\netcoreapp3.1\Razor\Vi
 C:\BOOTCAMP2020\OodweyneMadrasa\OodweyneMadrasa\obj\Debug\netcoreapp3.1\Razor\Views\Subjects\AllSubjects.cshtml.g.cs
 C:\BOOTCAMP2020\OodweyneMadrasa\OodweyneMadrasa\obj\Debug\netcoreapp3.1\Razor\Views\Subjects\CreateSubject.cshtml.g.cs
 C:\BOOTCAMP2020\OodweyneMadrasa\OodweyneMadrasa\obj\Debug\netcoreapp3.1\Razor\Views\Subjects\EditSubject.cshtml.g.cs
+C:\BOOTCAMP2020\OodweyneMadrasa\OodweyneMadrasa\obj\Debug\netcoreapp3.1\Razor\Views\Students\AllStudents.cshtml.g.cs
+C:\BOOTCAMP2020\OodweyneMadrasa\OodweyneMadrasa\obj\Debug\netcoreapp3.1\Razor\Views\Students\CreateStudent.cshtml.g.cs
+C:\BOOTCAMP2020\OodweyneMadrasa\OodweyneMadrasa\obj\Debug\netcoreapp3.1\Razor\Views\Students\EditStudent.cshtml.g.cs

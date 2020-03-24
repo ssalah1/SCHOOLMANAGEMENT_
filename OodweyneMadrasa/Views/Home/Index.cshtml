@@ -1,8 +1,60 @@
-﻿
-@{
-    ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+﻿@{
+    Layout = "_Layout";
 }
 
-<h1>Index</h1>
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="margin-bottom: 20px;">
+    <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img class="d-block w-100" src="~/images//slider1.jpg" alt="First slide">
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100" src="~/images/slide2.jpg" alt="Second slide">
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100" src="~/images/slider3.jpg" alt="Third slide">
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+<section class="jumbotron text-center">
+    <div class="container">
+        <h1>Welcome to Godey School Managements Portal</h1>
+        <p class="lead text-muted">This portal helps school admin to add new students, new courses, and new teachers. It also makes ease for management to assign student to a teacher and subject</p>
+    </div>
+</section>
+<div class="container" style="min-height: 600px;">
+    <h3 class="text-center text-info">Our Services</h3>
+    <div class="row text-center">
+        <div class="col-lg-4">
+            <img src="~/images/student.jpg" class="rounded-circle" width="140" height="140" />
+            <h2> <span class="badge badge-pill badge-info">@ViewBag.NumOfStudents</span> Students</h2>
+            <p>We have A+ students who are very dedicated, energized and willing to acheive higher goals.</p>
+            <p><a class="btn btn-secondary" href="/Students/AllStudents" role="button">View Students »</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+            <img src="~/images/student.jpg" class="rounded-circle" width="140" height="140" />
+            <h2><span class="badge badge-pill badge-info">@ViewBag.NumOfCourses</span> Courses</h2>
+            <p>We offer courses that can boast students knowledge and promotes their skills</p>
+            <p><a class="btn btn-secondary" href="/Subjects/AllSubjects" role="button">View Courses »</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+            <img src="~/images/teacher.jpg" class="rounded-circle" width="140" height="140" />
+            <h2><span class="badge badge-pill badge-info">@ViewBag.NumOfTeachers</span> Teachers</h2>
+            <p>Our teachers are very knowledgable and very seamlessly dedicated to promote future students</p>
+            <p><a class="btn btn-secondary" href="/Teacher/AllTeachers" role="button">View Teachers »</a></p>
+        </div><!-- /.col-lg-4 -->
+    </div>
 
+</div>

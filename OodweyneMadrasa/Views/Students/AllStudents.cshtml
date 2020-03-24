@@ -1,0 +1,45 @@
+﻿@model List<Student>
+@{
+    ViewData["Title"] = "AllStudents";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container border border-info">
+    <h3 class="text-info text-center">Welcome to All Students Page</h3>
+    <hr />
+
+    <p>
+        <a asp-action="CreateStudent" asp-controller="Students" class="btn btn-sm btn-info">Add Student</a>
+    </p>
+
+    <table class="table table-bordered table-hover table-responsive">
+        <tr class="thead-light">
+            <td>ID</td>
+            <td>FName</td>
+            <td>LName</td>
+            <td>Gender</td>
+            <td>Age</td>
+            <td>Class Name</td>
+            <td>Teacher Name</td>
+            <td></td>
+        </tr>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>@student.StudentId</td>
+                <td>@student.FirstName</td>
+                <td>@student.LastName</td>
+                <td>@student.Gender</td>
+                <td>@student.Age</td>
+                <td>@student.Subject?.SubjectName</td>
+                <td>@student.Teacher?.FirstName</td>
+
+                <td>
+                    <a class="btn btn-sm btn-info" asp-action="EditStudent" asp-route-id="@student.StudentId">Edit</a> |
+                    <a class="btn btn-sm btn-danger" asp-action="DeleteStudent" asp-route-id="@student.StudentId" onclick="return confirm('Are you sure you want to delete this Student!')">Delate</a>
+                </td>
+            </tr>
+        }
+    </table>
+
+</div>
