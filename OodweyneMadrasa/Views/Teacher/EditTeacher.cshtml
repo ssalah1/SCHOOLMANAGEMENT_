@@ -1,21 +1,19 @@
 ﻿@model Teacher
-
-
 @{
-    ViewData["Title"] = "CreateTeacher";
+    ViewData["Title"] = "EditTeacher";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
 <div class="container border border-info">
-    <h3 class="text-info text-center">Create new Teacher</h3>
+    <h3 class="text-info text-center">Edit Teacher</h3>
     <hr />
 
-    <form asp-action="CreateTeacher" method="post">
+    <form asp-action="EditTeacher" method="post">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
         <div class="row">
             <div class=" col-6">
+                @Html.HiddenFor(x => Model.TeacherId);
 
                 <div class="form-group">
                     <label asp-for="FirstName" class="control-label"></label>
@@ -69,7 +67,7 @@
 
             <div class="col-4 offset-4">
                 <div class="form-group">
-                    <input type="submit" value="Create" class="btn btn-primary" /> |   <a asp-action="Index">Back to List</a>
+                    <input type="submit" value="Edit" class="btn btn-primary" /> |   <a asp-action="Index">Back to List</a>
 
                 </div>
             </div>
@@ -81,4 +79,5 @@
     </form>
 
 </div>
+
 

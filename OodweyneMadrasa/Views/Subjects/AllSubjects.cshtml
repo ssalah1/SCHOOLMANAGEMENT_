@@ -1,0 +1,47 @@
+﻿@model List<Subject>
+@{
+    ViewData["Title"] = "AllSubjects";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container border border-info">
+    <h3 class="text-info text-center">Welcome to All Subjects Page</h3>
+    <hr />
+
+    <p>
+        <a asp-action="CreateSubject" asp-controller="Subjects" class="btn btn-sm btn-info">Add Subject</a>
+    </p>
+
+    <table class="table table-bordered table-hover table-responsive">
+        <tr class="thead-light">
+            <td>SubjectId</td>
+            <td>SubjectName</td>
+            <td>Cost</td>
+            <td>Description</td>
+            <td>Duration</td>
+            <td>MaxStudents</td>
+            <td>#OfStudents</td>
+            <td>Actions</td>
+        </tr>
+        @foreach (var subject in Model)
+        {
+            <tr>
+                <td>@subject.SubjectId</td>
+                <td>@subject.SubjectName</td>
+                <td>@subject.Cost</td>
+                <td>@subject.Description</td>
+                <td>@subject.Duration</td>
+                <td>@subject.MaxStudents</td>
+                <td>@subject.Students?.Count</td>
+                <td>
+                    <a class="btn btn-sm btn-info" asp-action="EditSubject" asp-route-id="@subject.SubjectId">Edit</a> |
+                    <a class="btn btn-sm btn-danger" asp-action="DeleteSubject" asp-route-id="@subject.SubjectId" onclick="return confirm('Are you sure you want to delete this Subject!')">Delate</a>
+                </td>
+            </tr>
+        }
+    </table>
+
+</div>
+
+

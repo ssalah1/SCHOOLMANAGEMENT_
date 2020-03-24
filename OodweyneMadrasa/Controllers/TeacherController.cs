@@ -25,6 +25,50 @@ namespace OodweyneMadrasa.Controllers
         {
             return View();
         }
-       
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult CreateTeacher(Teacher newTeacher)
+        {
+            if (ModelState.IsValid)
+            {
+                _db.Teachers.Add(newTeacher);
+                _db.SaveChanges();
+
+                return RedirectToAction("AllTeachers");
+            }
+            return View(newTeacher);
+        }
+        public IActionResult EditTeacher(int Id)
+        {
+            var teacher = _db.Teachers.Find(Id);
+            if (teacher == null)
+            {
+                return NotFound("Teacher Not Found");
+            }
+            return View(teacher);
+        }
+        [HttpPost]
+        public IActionResult EditTeacher(Teacher newTeacher)
+        {
+            if (ModelState.IsValid)
+            {
+                _db.Teachers.Update(newTeacher);
+                _db.SaveChanges();
+
+                return RedirectToAction("AllTeachers");
+            }
+            return View(newTeacher);
+        }
+        public IActionResult DeleteTeacher(int Id)
+        {
+            var teacher = _db.Teachers.Find(Id);
+            if (teacher == null)
+            {
+                return NotFound("Teacher Not Found");
+            }
+            _db.Teachers.Remove(teacher);
+            _db.SaveChanges();
+            return RedirectToAction("AllTeachers");
+        }
     }
 }
